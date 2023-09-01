@@ -1,4 +1,3 @@
-const { response } = require("express")
 const knex = require("../database/knex")
 
 class TagsController{
