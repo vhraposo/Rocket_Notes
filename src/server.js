@@ -4,6 +4,7 @@ const uploadConfig = require('./configs/upload')
 
 const AppError = require("./utils/AppError")
 
+const cors = require("cors")
 //Importando o express
 const express = require("express")
 
@@ -12,6 +13,7 @@ migrationsRun()
 
 //Inicializando o express
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER))
